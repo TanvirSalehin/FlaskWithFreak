@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block style %}
+#pipInstallFlask{
+color: white;
+font-family: noto;
+text-shadow: 0px 0px 0px black;
+}
+{% endblock %}
+
+{% block title %}{{name}}{% endblock %}
+
+{% block content %}
+<br><p>Hi, mister {{name}}!</p>
+{% if showhowold == "True" %}
+    <p>Aren't you {{age}} years old??</p><br>
+{% else %}
+    <p>This website is just a testing site for python backend programming. Flask is used for this purpose. You can download it by using the command in command prompt:</p>
+    <h3 id = "pipInstallFlask" align="left">pip install flask</h3><br>
+{% endif %}
+<p>This website is made with HTML and CSS ar front end and Python (Flask) as backend by <b>Tanvir</b></p>
+{% endblock %}

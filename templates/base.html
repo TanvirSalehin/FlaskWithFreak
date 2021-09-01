@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>{% block title %}{% endblock %}</title>
+        <style>
+            {% block style %}
+            {% endblock %}
+
+            #body{
+            background-color: black;
+            }
+
+            #div1{
+            background-color: black;
+            font-family:sans-serif;
+            text-shadow: 3px 1px 2px darkred;
+            }
+
+            #content{
+            background-color: black;
+            text-shadow: 2px 3px 3px blue;
+            color:yellow;
+            }
+        </style>
+    </head>
+    <body id="body">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="https://www.youtube.com/channel/UCGpgE3w8sroIJ_Qv9YSltWg">YT Channel</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Github</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/login">Login</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/user">User</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/logout">Logout</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        <div id = "div1">
+            {% if not name == "Tanvir" %}
+                <h1 align = "center" style="color:purple">Assalamu Alaikum {{name}}!</h1><hr size="2" width="50%" align="center" color="blue">
+                </br>
+            {% elif name != "tanvir" %}
+                <h1 align = "center" style="color:purple">Assalamu Alaikum {{name}}!</h1><hr size="2" width="50%" align="center" color="blue">
+                </br>
+            {% else %}
+                <h3 align = "left" style="color:blue">Welcome Tanvir, we were waiting for you.</h3>
+            {% endif %}
+        </div>
+        <div id="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+
+
+
+        <!--<div id = "pythonCode">
+            {% for x in namesList %}
+                <p align="center">Is your name {{x}} ?</p>
+                {% if x == "Tanvir" %}
+                    <p align="right" style="color:red">Welcome admin {{x}}!</p>
+                {% elif x == "Toha" %}
+                    <p align="center" style="color:yellow">Don't play that island game thingy, {{x}}!</p>
+                {% else %}
+                    <p align="left" style="color:white">May Allah bless you {{x}}.</p>
+                {% endif %}
+            {% endfor %}
+        </div>-->
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+    </body>
+</html>
