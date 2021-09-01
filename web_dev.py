@@ -70,4 +70,4 @@ def logout():
 
 #   To make sure the code only works if it is run from within itself (whatever that means)
 if __name__ == "__main__":
-    app.run(debug = True, host = "0.0.0.0")
+    app.run(debug = False, host = "0.0.0.0")
